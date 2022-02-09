@@ -1,0 +1,70 @@
+﻿@using OnAuction.Models
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h1></h1>
+
+<div clas="container">
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-2">
+            <p>Категорії:</p>
+            <ul class="list-unstyled">
+                <li>
+                    @Html.ActionLink("Всі", "List")
+                </li>
+                @foreach (Category category in ViewBag.Categories)
+                {
+                    <li>
+                        @Html.ActionLink(category.Name, "List", new { category = category.Id })
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-10 col-lg-10 col-xl-10">
+                <div class="row equal">
+                    @foreach (LotAndBetVM lot in ViewBag.LotAndBestBet)
+                    {
+                        <div class="p-15 col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <div class="thumbnail">
+                                <div class="crop">
+                                    <div class="crop-wrapper">
+                                        <div class="crop-content">
+                                            @if (lot.Lot.ImagePath == null)
+                                            {
+                                                <img src="@Url.Content("~/Images/NoImage.png")" width="100%" />
+                                            }
+                                            else
+                                            {
+                                                <img src="@Url.Content(lot.Lot.ImagePath)" width="100%" />
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="caption">
+                                    <h4 class="wrap-text" title="@lot.Lot.Title">@lot.Lot.Title</h4>
+                                    <h5 class="w-100-right">
+                                        @if (lot.Bet == null)
+                                        {
+                                            @lot.Lot.StartPrice.ToString() 
+                                        }
+                                        else
+                                        {
+                                            @lot.Bet.Price.ToString() 
+                                        }
+                                        грн.
+                                    </h5>
+                                    <h6 class="w-100-right">
+                                        @lot.Lot.FinishTime.ToString("dd:MM:yyyy HH:mm:ss")
+                                    </h6>
+                                        <a href="@Url.Action("Info", "Lot", new { LotId = lot.Lot.Id })" class="btn btn-default">Детальніше</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    }
+                </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+﻿@model List<OnAuction.Models.LotAndBetAndWinVM>
+@{
+    ViewBag.Title = "MyBetsHistory";
+}
+
+<h2>Історія ставок</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th class="text-center">#</th>
+            <th class="text-center">Назва лоту</th>
+            <th class="text-center">Моя ставка, грн.</th>
+            <th class="text-center">Дата закінчення лоту</th>
+            <th class="text-center">Виграш / Програш</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count; ++i)
+        {
+        <tr>
+            <th class="text-right">@(i + 1)</th>
+            <td class="wrap-text" title="@Model[i].Lot.Title">@Html.ActionLink(Model[i].Lot.Title, "Info", "Lot", new { LotId = Model[i].Lot.Id }, "")</td>
+            <td>@Model[i].Bet.Price</td>
+            <td>@Model[i].Lot.FinishTime.ToString("dd.MM.yyyy HH:mm:ss")</td>
+            @if (Model[i].Bet.UserId == Model[i].Win.UserId)
+            {
+                <td style="color: green;">Виграш</td>
+            }
+            else
+            {
+                <td style="color: red;">Програш</td>
+            }
+
+
+        </tr>
+        }
+    </tbody>
+</table>

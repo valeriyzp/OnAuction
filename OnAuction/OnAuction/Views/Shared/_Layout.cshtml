@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="~/OnAuction.ico" type="image/vnd.microsoft.icon">
+    <title>@ViewBag.Title - OnAuction</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("OnAuction", "List", "Lot", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class=" nav navbar-nav">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("admin"))
+                        {
+                            <li>@Html.ActionLink("Ставки", "Bets", "Admin")</li>
+                            <li>@Html.ActionLink("Виграші", "Wins", "Admin")</li>
+                        }
+                        else if (User.IsInRole("buyer"))
+                        {
+                            <li>@Html.ActionLink("Активні ставки", "MyBetsActive", "Lot")</li>
+                            <li>@Html.ActionLink("Історія ставок", "MyBetsHistory", "Lot")</li>
+                        }
+                        else if (User.IsInRole("seller"))
+                        {
+                            <li>@Html.ActionLink("Новий лот", "Create", "Lot")</li>
+                            <li>@Html.ActionLink("Мої лоти", "MyLots", "Lot")</li>
+                        }
+                    }
+                </ul>
+                <ul class=" nav navbar-nav navbar-right">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="navbar-text">@User.Identity.Name</li>
+                        <li>@Html.ActionLink("Вийти", "Logout", "Account")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Увійти", "Login", "Account")</li>
+                        <li>@Html.ActionLink("Зареєструватися", "Register", "Account")</li>
+                    }
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - всі права захищено</p>
+            <p>Спеціально для Олійника А.О.</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

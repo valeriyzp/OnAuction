@@ -1,0 +1,100 @@
+﻿@model OnAuction.Models.LotAndBetVM
+
+@{
+    ViewBag.Title = "Info";
+}
+
+@if (Model.Lot.IsFinish)
+{
+    <h2>[Завершено]  @Model.Lot.Title</h2>
+}
+else
+{
+    <h2>@Model.Lot.Title</h2>
+}
+
+<div clas="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            @if (Model.Lot.ImagePath == null)
+            {
+                <img src="@Url.Content("~/Images/NoImage.png")" width="100%" />
+            }
+            else
+            {
+                <img src="@Url.Content(Model.Lot.ImagePath)" width="100%" />
+            }
+            <h4>
+                Категорія: @Model.Lot.Category.Name
+            </h4>
+            <p>
+                @Model.Lot.Description
+            </p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="thumbnail">
+                <p>Стартова вартість: @Model.Lot.StartPrice грн.</p>
+                <p>
+                    Поточна вартість (ставок @Html.ActionLink(((int)ViewBag.BetsCount).ToString(), "Bets", new { LotId = Model.Lot.Id })):
+                    @if (Model.Bet == null)
+                    {
+                        @Model.Lot.StartPrice
+                    }
+                    else
+                    {
+                        @Model.Bet.Price
+                    }
+                    грн.
+                </p>
+                <p>Крок ставки: @Model.Lot.BetStep грн.</p>
+                <p>Вартість моментальної купівлі: @Model.Lot.InstantPrice грн.</p>
+                <p>Дата завершення аукціону: @Model.Lot.FinishTime.ToString("dd.MM.yyyy HH:mm:ss")</p>
+                <p>
+                    Залишилось часу:
+                    @if (Model.Lot.IsFinish || Model.Lot.FinishTime <= DateTime.Now)
+                    {
+                        <span>00:00:00</span>
+                    }
+                    else
+                    {
+                        <span class="jb_timer">@((Model.Lot.FinishTime - DateTime.Now).Hours.ToString("D2")):@((Model.Lot.FinishTime - DateTime.Now).Minutes.ToString("D2")):@((Model.Lot.FinishTime - DateTime.Now).Seconds.ToString("D2"))</span>
+                    }
+                </p>
+
+                @if (!Model.Lot.IsFinish && User.IsInRole("buyer"))
+                {
+
+                    using (Html.BeginForm("MakeBet", "Lot", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <input type="hidden" name="LotId" value="@Model.Lot.Id" />
+
+                        if (Model.Bet == null)
+                        {
+                            <input type="number" name="Price" inputmode="numeric" style="text-align: right;" min="@Model.Lot.StartPrice" value="@Model.Lot.StartPrice" step="@Model.Lot.BetStep" />
+                        }
+                        else
+                        {
+                            <input type="number" name="Price" inputmode="numeric" style="text-align: right;" min="@(Model.Bet.Price + Model.Lot.BetStep)" value="@(Model.Bet.Price + Model.Lot.BetStep)" step="@Model.Lot.BetStep" />
+                        }
+                        <input type="submit" value="Зробити ставку" class="btn btn-default" />
+                    }
+                    using (Html.BeginForm("MakeInstantBet", "Lot", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <input type="hidden" name="LotId" value="@Model.Lot.Id" />
+
+                        <input type="submit" value="Викупити за @Model.Lot.InstantPrice грн." class="btn btn-default" />
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/countdown.js")
+}

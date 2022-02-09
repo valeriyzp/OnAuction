@@ -1,0 +1,34 @@
+﻿@model List<OnAuction.Models.Win>
+
+
+@{
+    ViewBag.Title = "Wins";
+}
+
+<h2>Всі виграші</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th class="text-center">#</th>
+            <th class="text-center">Назва лоту</th>
+            <th class="text-center">Номер лоту</th>
+            <th class="text-center">Користувач</th>
+            <th class="text-center">Ставка, грн.</th>
+            <th class="text-center">Дата</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count(); ++i)
+        {
+            <tr>
+                <th class="text-right">@(i + 1)</th>
+                <td class="wrap-text" title="@Model[i].Lot.Title">@Html.ActionLink(Model[i].Lot.Title, "Info", "Lot", new { LotId = Model[i].LotId }, "")</td>
+                <td>@Model[i].LotId</td>
+                <td>@Model[i].User.Username</td>
+                <td>@Model[i].Price</td>
+                <td>@Model[i].Time.ToString("dd.MM.yyyy HH:mm:ss")</td>
+            </tr>
+        }
+    </tbody>
+</table>

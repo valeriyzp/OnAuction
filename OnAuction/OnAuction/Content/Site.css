@@ -1,0 +1,77 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+@font-face {
+    font-family: "Pacifico";
+    src: url("../fonts/Pacifico-Regular.ttf");
+}
+
+.navbar-brand {
+    font-family: Pacifico;
+    font-size: 24px;
+    color: white !important;
+}
+
+.row.equal {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    height: 100%;
+    margin-bottom: 0px;
+}
+
+.p-15 {
+    padding: 15px;
+}
+
+.wrap-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.w-100-right {
+    width: 100%;
+    text-align: right;
+}
+
+.crop {
+    width: 100%;
+}
+
+.crop-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+}
+
+.crop-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #dbdbdb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

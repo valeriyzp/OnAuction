@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OnAuction.Attributes.FileSizeAttribute">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Attributes\FileSizeAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Attributes.FileTypeAttribute">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attributes\FileTypeAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Controllers.AccountController">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Controllers.AdminController">
+    <Position X="9.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\AdminController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Controllers.LotController">
+    <Position X="9.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAQggAAAEAAAAEQAAAAAEAAAAAAAEAAAAI=</HashCode>
+      <FileName>Controllers\LotController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Filters.NotAuthorizeAttribute">
+    <Position X="5.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\NotAuthorizeAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Filters.UserAttribute">
+    <Position X="5.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\UserAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.LifeCycle.LifeCycleManager">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LifeCycle\LifeCycleManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Models.Bet">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAQAAAAAEAAAAAAgAAAgAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Models\Bet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Models.Category">
+    <Position X="0.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Models.DataContext">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAQAAAAAAAAAAAAAAAQAgAAEAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DataContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Models.DataDBInitializer">
+    <Position X="2.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DataDBInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Models.LoginModel">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Models\LoginModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Models.Lot">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAACAAAgAkAEAAAAAIiAIAEAAABAAAAAAAAACAA=</HashCode>
+      <FileName>Models\Lot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Models.LotAndBetAndBestBetVM">
+    <Position X="11" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAACAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\LotAndBetAndBestBetVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Models.LotAndBetAndWinAndUserVM">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAECAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\LotAndBetAndWinAndUserVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Models.LotAndBetAndWinVM">
+    <Position X="11" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAEAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\LotAndBetAndWinVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Models.LotAndBetVM">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\LotAndBetVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Models.LotCreateModel">
+    <Position X="4" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAkAAAAAAAACAAAEAABBAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\LotCreateModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Models.RegisterModel">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAEAAAAQAAQAAAgAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Models\RegisterModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Models.Role">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Models.User">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAIAACAAAAAAEQAAQAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Models.Win">
+    <Position X="2.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAQAAAAAEAAAAAAgAAAgAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Models\Win.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.Providers.CustomRoleProvider">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAEEAAwAAAEAAAAAAAABAAAAAAAAAIAAAAEAAEQAAA=</HashCode>
+      <FileName>Providers\CustomRoleProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.MvcApplication">
+    <Position X="12.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.BundleConfig">
+    <Position X="12.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\BundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.FilterConfig">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\FilterConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnAuction.RouteConfig">
+    <Position X="12.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

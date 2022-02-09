@@ -1,0 +1,56 @@
+﻿@model List<OnAuction.Models.LotAndBetAndWinAndUserVM>
+@{
+    ViewBag.Title = "MyLots";
+}
+
+<h2>Мої лоти</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th class="text-center">#</th>
+            <th class="text-center">Назва лоту</th>
+            <th class="text-center">Найбільша ставка, грн.</th>
+            <th class="text-center">Дата закінчення лоту</th>
+            <th class="text-center">Статус</th>
+            <th class="text-center">Переможець</th>
+            <th class="text-center">Вартість, грн.</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count; ++i)
+        {
+        <tr>
+            <th class="text-right">@(i + 1)</th>
+            <td class="wrap-text" title="@Model[i].Lot.Title">@Html.ActionLink(Model[i].Lot.Title, "Info", "Lot", new { LotId = Model[i].Lot.Id }, "")</td>
+            @if (Model[i].Bet != null)
+            {
+                <td>@Model[i].Bet.Price</td>
+            }
+            else
+            {
+                <td>-</td>
+            }
+            <td>@Model[i].Lot.FinishTime.ToString("dd.MM.yyyy HH:mm:ss")</td>
+            @if (Model[i].Lot.IsFinish && Model[i].Win != null)
+            {
+                <td style="color: green;">Завершено</td>
+                <td>@Model[i].Winner.Username</td>
+                <td>@Model[i].Win.Price</td>
+            }
+            else if (Model[i].Lot.IsFinish)
+            {
+                <td style="color: green;">Завершено</td>
+                <td style="color: red;">Немає</td>
+                <td>-</td>
+            }
+            else
+            {
+                <td style="color: blue;">В процесі</td>
+                <td>-</td>
+                <td>-</td>
+            }
+        </tr>
+        }
+    </tbody>
+</table>

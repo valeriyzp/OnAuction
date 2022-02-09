@@ -1,0 +1,29 @@
+﻿@model List<OnAuction.Models.Bet>
+
+@{
+    ViewBag.Title = "Bets";
+}
+
+<h2 class="wrap-text">@(((OnAuction.Models.Lot)ViewBag.Lot).Title)</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th class="text-center">#</th>
+            <th class="text-center">Користувач</th>
+            <th class="text-center">Ставка, грн.</th>
+            <th class="text-center">Час</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count(); ++i)
+        {
+            <tr>
+                <th class="text-right">@(i + 1)</th>
+                <td>@Model[i].User.Username</td>
+                <td>@Model[i].Price</td>
+                <td>@Model[i].Time.ToString("dd.MM.yyyy HH:mm:ss")</td>
+            </tr>
+        }
+    </tbody>
+</table>
